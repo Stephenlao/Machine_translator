@@ -20,6 +20,8 @@ torchaudio==2.5.1
 pickle
 # Pytorch lightning
 
-
+os
 # load dataset from ggdrive
 gdown
+
+python 3.10.11
