@@ -64,35 +64,32 @@
 
 
 
+import os
 import streamlit as st
 import torch
 import pickle
-import requests
-from translation_utils import TranslationModel, translate_sentence, en_tokenizer
-
 import gdown
+from translation_utils import TranslationModel, translate_sentence, en_tokenizer
 
 def gdrive_url(file_id):
     return f"https://drive.google.com/uc?export=download&id={file_id}"
 
 def download_file(url, filename):
-    gdown.download(url, filename, quiet=False)
+    if not os.path.exists(filename):  # ✅ Check if file exists
+        gdown.download(url, filename, quiet=False)
 
-# Define Google Drive file IDs (Replace with your actual IDs)
+# Define Google Drive file IDs
 SRC_VOCAB_URL = "1K1v3I9QIXf-D6rdjufsu0_iqipF4au1q"
 TGT_VOCAB_URL = "13ePhWk0nshgUaMoAYoOyHap5iTA-YGsF" 
 MODEL_CKPT_URL = "1Owx59VZEV9Fw6GRFfZYilBjZxcpbblKd"
-
-
 
 src_vocab_url = gdrive_url(SRC_VOCAB_URL)
 tgt_vocab_url = gdrive_url(TGT_VOCAB_URL)
 translate_model_url = gdrive_url(MODEL_CKPT_URL)
 
-
 @st.cache_resource
 def load_model():
-    # Download required files
+    # ✅ Download only if files do not exist
     download_file(src_vocab_url, "src_vocab.pkl")
     download_file(tgt_vocab_url, "tgt_vocab.pkl")
     download_file(translate_model_url, "translator_model.ckpt")
@@ -110,9 +107,7 @@ def load_model():
     model.eval()
     return model, src_vocab, tgt_vocab
 
-
-
-# # Load everything
+# Load everything
 model, src_vocab, tgt_vocab = load_model()
 
 # 🔹 Streamlit UI
