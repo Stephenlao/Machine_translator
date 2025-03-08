@@ -1,0 +1,25 @@
+# Streamlit for UI
+streamlit
+
+# PyTorch (CPU version, since Streamlit Community Cloud does not support GPUs)
+torch==2.5.1
+torchvision==0.20.0
+torchaudio==2.5.1
+
+
+# Handling Pickle Files
+pickle5
+
+# NLP Libraries (if needed)
+spacy
+underthesea  # If you use it for Vietnamese tokenization
+
+# Utility Libraries
+numpy
+pandas
+
+# For Streamlit File Handling
+watchdog
+
+# Pytorch lightning
+lightning
