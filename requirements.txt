@@ -22,7 +22,7 @@ pandas
 watchdog
 
 # Pytorch lightning
-lightning
+
 
 # load dataset from ggdrive
 gdown
