@@ -3,7 +3,7 @@ streamlit
 
 # PyTorch (CPU version, since Streamlit Community Cloud does not support GPUs)
 torch==2.5.1
-torchvision==0.20.0
+torchvision==0.20.1
 torchaudio==2.5.1
 
 
