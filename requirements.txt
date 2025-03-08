@@ -8,7 +8,6 @@ torchaudio==2.5.1
 
 
 # Handling Pickle Files
-pickle5
 
 # NLP Libraries (if needed)
 # spacy
@@ -18,6 +17,7 @@ pickle5
 # For Streamlit File Handling
 # watchdog
 
+pickle
 # Pytorch lightning
 
 
