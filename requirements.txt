@@ -11,15 +11,12 @@ torchaudio==2.5.1
 pickle5
 
 # NLP Libraries (if needed)
-spacy
-underthesea  # If you use it for Vietnamese tokenization
+# spacy
+# underthesea  # If you use it for Vietnamese tokenization
 
-# Utility Libraries
-numpy
-pandas
 
 # For Streamlit File Handling
-watchdog
+# watchdog
 
 # Pytorch lightning
 
