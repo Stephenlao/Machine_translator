@@ -6,22 +6,15 @@ torch==2.5.1
 torchvision==0.20.1
 torchaudio==2.5.1
 
+# PyTorch Lightning
+pytorch-lightning
 
 # Handling Pickle Files
+pickle5  # Only if needed, otherwise remove
 
 # NLP Libraries (if needed)
-# spacy
-# underthesea  # If you use it for Vietnamese tokenization
+spacy
+underthesea  # If you use it for Vietnamese tokenization
 
-
-# For Streamlit File Handling
-# watchdog
-
-pickle
-# Pytorch lightning
-
-os
-# load dataset from ggdrive
+# Google Drive file download
 gdown
-
-python 3.10.11
