@@ -18,3 +18,5 @@ underthesea  # If you use it for Vietnamese tokenization
 
 # Google Drive file download
 gdown
+
+maturin
