@@ -14,7 +14,8 @@ pickle5  # Only if needed, otherwise remove
 
 # NLP Libraries (if needed)
 spacy
-underthesea  # If you use it for Vietnamese tokenization
+underthesea==6.8.4
+  # If you use it for Vietnamese tokenization
 
 # Google Drive file download
 gdown
