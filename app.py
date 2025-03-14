@@ -5,8 +5,27 @@ import pickle
 import gdown
 from translation_utils import TranslationModel, translate_sentence, en_tokenizer
 import lightning as pl
+import subprocess
+import spacy
 
 
+def ensure_spacy_model(model_name="en_core_web_md"):
+    try:
+        nlp = spacy.load(model_name)  # Test if model is available
+        return nlp
+    except (ImportError, OSError):
+        print(f"Installing SpaCy and downloading {model_name}...")
+        subprocess.run(["pip", "install", "spacy"], check=True)
+        subprocess.run(["python", "-m", "spacy", "download", model_name], check=True)
+        return spacy.load(model_name)
+
+# Load SpaCy model
+nlp_en = ensure_spacy_model("en_core_web_md")
+
+
+# Define the tokenizer for English
+def en_tokenizer(sentence):
+    return [tok.text for tok in nlp_en.tokenizer(sentence)]
 def gdrive_url(file_id):
     return f"https://drive.google.com/uc?export=download&id={file_id}"
 
