@@ -10,7 +10,7 @@ torchaudio==2.5.1
 pytorch-lightning
 
 # Handling Pickle Files
-pickle  # Only if needed, otherwise remove
+# pickle  # Only if needed, otherwise remove
 
 # NLP Libraries (if needed)
 spacy
