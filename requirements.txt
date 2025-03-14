@@ -1,24 +1,8 @@
-# Streamlit for UI
-streamlit
-
-# PyTorch (CPU version, since Streamlit Community Cloud does not support GPUs)
+streamlit==1.36.0
 torch==2.5.1
 torchvision==0.20.1
 torchaudio==2.5.1
-
-# PyTorch Lightning
-pytorch-lightning
-lightning
-
-# Handling Pickle Files
-# pickle  # Only if needed, otherwise remove
-
-# NLP Libraries (if needed)
-spacy
-
-  # If you use it for Vietnamese tokenization
-
-# Google Drive file download
-gdown
-
-# underthesea==6.8.4
+pytorch-lightning==2.0.9
+spacy==3.7.2
+gdown==5.2.0
+en-core-web-sm==3.7.1
