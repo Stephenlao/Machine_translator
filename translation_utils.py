@@ -1,46 +1,27 @@
-import pandas as pd
-import spacy
-import math
-from tqdm import tqdm
+# translation_utils.py
 import torch
-from torch import nn
+import torch.nn as nn
 import lightning as pl
-from typing import Iterable, List, Callable
-from torch.utils.data import Dataset, DataLoader
-# from underthesea import sent_tokenize, text_normalize, word_tokenize
-from torchmetrics.text import BLEUScore
-
-
-# Download the models if necessary
-# if not spacy.util.is_package('en_core_web_md'):
-#     spacy.cli.download('en_core_web_md')
-    
-# # Load the models
-# nlp_en = spacy.load('en_core_web_md')
-
-
 import spacy
-import spacy.cli
+import subprocess
 
-# Ensure en_core_web_md is available
-try:
-    nlp = spacy.load("en_core_web_md")
-except OSError:
-    print("⚠️ en_core_web_md not found. Downloading now...")
-    spacy.cli.download("en_core_web_md")  # Auto-download if missing
-    nlp = spacy.load("en_core_web_md")  # Load after downloading
+# Ensure SpaCy model is installed
+def ensure_spacy_model(model_name="en_core_web_md"):
+    try:
+        nlp = spacy.load(model_name)  # Test if model is available
+        return nlp
+    except (ImportError, OSError):
+        print(f"Installing SpaCy and downloading {model_name}...")
+        subprocess.run(["pip", "install", "spacy==3.7.2"], check=True)
+        subprocess.run(["python", "-m", "spacy", "download", model_name], check=True)
+        return spacy.load(model_name)
 
+# Load SpaCy model
+nlp_en = ensure_spacy_model("en_core_web_md")
 
-# Now you can use `nlp`
-
-
-
-def tokenize_en(sentence):
+# Define the tokenizer for English
+def en_tokenizer(sentence):
     return [tok.text for tok in nlp_en.tokenizer(sentence)]
-
-
-# # # Define the tokenizer for English
-en_tokenizer = tokenize_en
 
 
 # 1
