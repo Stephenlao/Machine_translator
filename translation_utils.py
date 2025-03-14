@@ -12,7 +12,7 @@ def ensure_spacy_model(model_name="en_core_web_md"):
         return nlp
     except (ImportError, OSError):
         print(f"Installing SpaCy and downloading {model_name}...")
-        subprocess.run(["pip", "install", "spacy==3.7.2"], check=True)
+        subprocess.run(["pip", "install", "spacy"], check=True)
         subprocess.run(["python", "-m", "spacy", "download", model_name], check=True)
         return spacy.load(model_name)
 
