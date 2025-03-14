@@ -12,11 +12,26 @@ from torchmetrics.text import BLEUScore
 
 
 # Download the models if necessary
-if not spacy.util.is_package('en_core_web_md'):
-    spacy.cli.download('en_core_web_md')
+# if not spacy.util.is_package('en_core_web_md'):
+#     spacy.cli.download('en_core_web_md')
     
-# Load the models
-nlp_en = spacy.load('en_core_web_md')
+# # Load the models
+# nlp_en = spacy.load('en_core_web_md')
+
+
+import spacy
+import spacy.cli
+
+# Ensure en_core_web_md is available
+try:
+    nlp = spacy.load("en_core_web_md")
+except OSError:
+    print("⚠️ en_core_web_md not found. Downloading now...")
+    spacy.cli.download("en_core_web_md")  # Auto-download if missing
+    nlp = spacy.load("en_core_web_md")  # Load after downloading
+
+
+# Now you can use `nlp`
 
 
 
