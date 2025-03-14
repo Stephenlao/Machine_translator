@@ -8,6 +8,7 @@ torchaudio==2.5.1
 
 # PyTorch Lightning
 pytorch-lightning
+lightning
 
 # Handling Pickle Files
 # pickle  # Only if needed, otherwise remove
