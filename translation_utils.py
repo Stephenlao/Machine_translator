@@ -7,7 +7,7 @@ from torch import nn
 import lightning as pl
 from typing import Iterable, List, Callable
 from torch.utils.data import Dataset, DataLoader
-from underthesea import sent_tokenize, text_normalize, word_tokenize
+# from underthesea import sent_tokenize, text_normalize, word_tokenize
 from torchmetrics.text import BLEUScore
 
 
