@@ -22,8 +22,4 @@ en-core-web-md @ https://github.com/explosion/spacy-models/releases/download/en_
 # Google Drive file download
 gdown
 
-pip==23.2.1
-setuptools
-wheel
-maturin
 # underthesea==6.8.4
