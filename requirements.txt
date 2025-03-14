@@ -23,4 +23,4 @@ pip==23.2.1
 setuptools
 wheel
 maturin
-underthesea==6.8.4
+# underthesea==6.8.4
