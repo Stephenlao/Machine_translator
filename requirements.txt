@@ -14,7 +14,7 @@ lightning
 # pickle  # Only if needed, otherwise remove
 
 # NLP Libraries (if needed)
-spacy==3.7.2
+spacy
 
   # If you use it for Vietnamese tokenization
 
